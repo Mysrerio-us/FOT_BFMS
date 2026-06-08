@@ -22,6 +22,10 @@ namespace FOT_BFMS
             makeDull();
             
         }
+        private void Login_Load(object sender, EventArgs e)         
+        {
+            toolTip1.SetToolTip(pictureBoxClossApp, "Close");
+        }
         private void makeDull()
         {
             roundControlLogin.BackgroundColor = Color.FromArgb(230, 226, 217);
@@ -40,10 +44,7 @@ namespace FOT_BFMS
 
         }
 
-        private void Login_Load(object sender, EventArgs e)
-        {
-            toolTip1.SetToolTip(pictureBoxClossApp, "Close");
-        }
+        
 
         private void roundControl4_Load(object sender, EventArgs e)
         {
