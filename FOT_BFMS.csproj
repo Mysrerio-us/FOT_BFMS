@@ -135,6 +135,9 @@
     <Compile Include="Signup.Designer.cs">
       <DependentUpon>Signup.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AdminDashboard.resx">
+      <DependentUpon>AdminDashboard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DepositMoneyUI.resx">
       <DependentUpon>DepositMoneyUI.cs</DependentUpon>
     </EmbeddedResource>
