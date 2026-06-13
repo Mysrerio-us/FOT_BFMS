@@ -30,9 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.bFMSDataSet = new FOT_BFMS.BFMSDataSet();
-            this.signupBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.signupTableAdapter = new FOT_BFMS.BFMSDataSetTableAdapters.signupTableAdapter();
             this.userIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.usernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,9 +39,12 @@
             this.phoneNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.oTPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.createdDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.signupBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bFMSDataSet = new FOT_BFMS.BFMSDataSet();
+            this.signupTableAdapter = new FOT_BFMS.BFMSDataSetTableAdapters.signupTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bFMSDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.signupBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bFMSDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -68,20 +68,7 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(1117, 186);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // bFMSDataSet
-            // 
-            this.bFMSDataSet.DataSetName = "BFMSDataSet";
-            this.bFMSDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // signupBindingSource
-            // 
-            this.signupBindingSource.DataMember = "signup";
-            this.signupBindingSource.DataSource = this.bFMSDataSet;
-            // 
-            // signupTableAdapter
-            // 
-            this.signupTableAdapter.ClearBeforeFill = true;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // userIDDataGridViewTextBoxColumn
             // 
@@ -155,6 +142,20 @@
             this.createdDateDataGridViewTextBoxColumn.Name = "createdDateDataGridViewTextBoxColumn";
             this.createdDateDataGridViewTextBoxColumn.Width = 125;
             // 
+            // signupBindingSource
+            // 
+            this.signupBindingSource.DataMember = "signup";
+            this.signupBindingSource.DataSource = this.bFMSDataSet;
+            // 
+            // bFMSDataSet
+            // 
+            this.bFMSDataSet.DataSetName = "BFMSDataSet";
+            this.bFMSDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // signupTableAdapter
+            // 
+            this.signupTableAdapter.ClearBeforeFill = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -165,8 +166,8 @@
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bFMSDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.signupBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bFMSDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
