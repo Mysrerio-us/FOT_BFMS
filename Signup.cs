@@ -268,57 +268,57 @@ namespace FOT_BFMS
                 return;
             }
             else
-            {
-                Random rnd = new Random();
-                randomNumber = (rnd.Next(100000, 999999)).ToString();   //otp disabled temporarily
-                MessageBox.Show("OTP : " + randomNumber);
-            }
-            //{
-            //    string name = textBoxFirstName.Text;
-            //    string apiKey = "5282|cIwMQwBK7ZqJlj7qG7ToctqxLJvgDjr39LNtfZfuc2388d69";
-
+            //{      //For testing ONLYYYY
             //    Random rnd = new Random();
-            //    randomNumber = (rnd.Next(100000, 999999)).ToString();
-
-            //    // The JSON structure required by Text.lk API
-            //    var payload = new
-            //    {
-            //        recipient = rawPhoneNumber,
-            //        sender_id = "TextLKDemo", // registered sender ID from text.lk
-            //        type = "plain",
-            //        message = $"Hey {name}, your OTP is {randomNumber}"
-            //    };
-
-            //    string json = JsonSerializer.Serialize(payload);
-
-            //    using (HttpClient client = new HttpClient())
-            //    {
-            //        client.DefaultRequestHeaders.Add("Authorization", $"Bearer {apiKey}");
-            //        client.DefaultRequestHeaders.Add("Accept", "application/json");
-
-            //        var content = new StringContent(json, Encoding.UTF8, "application/json");
-
-            //        try
-            //        {
-            //            HttpResponseMessage response = await client.PostAsync("https://app.text.lk/api/v3/sms/send", content);
-            //            string result = await response.Content.ReadAsStringAsync();
-
-            //            if (response.IsSuccessStatusCode)
-            //            {
-            //                MessageBox.Show("OTP Sent Successfully!");
-            //            }
-            //            else
-            //            {
-            //                MessageBox.Show("Error: " + result);
-            //            }
-            //        }
-            //        catch (Exception ex)
-            //        {
-            //            MessageBox.Show("Exception: " + ex.Message);
-            //        }
-            //    }
+            //    randomNumber = (rnd.Next(100000, 999999)).ToString();   //otp disabled temporarily
+            //    MessageBox.Show("OTP : " + randomNumber);
             //}
-            
+            {
+                string name = textBoxFirstName.Text;
+                string apiKey = "5282|cIwMQwBK7ZqJlj7qG7ToctqxLJvgDjr39LNtfZfuc2388d69";
+
+                Random rnd = new Random();
+                randomNumber = (rnd.Next(100000, 999999)).ToString();
+
+                // The JSON structure required by Text.lk API
+                var payload = new
+                {
+                    recipient = rawPhoneNumber,
+                    sender_id = "TextLKDemo", // registered sender ID from text.lk
+                    type = "plain",
+                    message = $"Hey {name}, your OTP is {randomNumber}"
+                };
+
+                string json = JsonSerializer.Serialize(payload);
+
+                using (HttpClient client = new HttpClient())
+                {
+                    client.DefaultRequestHeaders.Add("Authorization", $"Bearer {apiKey}");
+                    client.DefaultRequestHeaders.Add("Accept", "application/json");
+
+                    var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+                    try
+                    {
+                        HttpResponseMessage response = await client.PostAsync("https://app.text.lk/api/v3/sms/send", content);
+                        string result = await response.Content.ReadAsStringAsync();
+
+                        if (response.IsSuccessStatusCode)
+                        {
+                            MessageBox.Show("OTP Sent Successfully!");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Error: " + result);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Exception: " + ex.Message);
+                    }
+                }
+            }
+
         }
 
         private void pictureBoxPNW_Click(object sender, EventArgs e)
