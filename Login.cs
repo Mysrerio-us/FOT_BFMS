@@ -182,5 +182,15 @@ namespace FOT_BFMS
         {
             loginButonCheck();
         }
+
+        private void roundControl1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void roundControlLogin_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
