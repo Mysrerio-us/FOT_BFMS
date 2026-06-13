@@ -215,5 +215,10 @@ namespace FOT_BFMS
             this.Hide();
         
     }
+
+        private void AdminDashboard_Load_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

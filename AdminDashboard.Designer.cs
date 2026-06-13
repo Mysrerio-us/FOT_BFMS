@@ -1215,65 +1215,9 @@
             // 
             // AdminDashboard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1348, 721);
-            this.Controls.Add(this.tblCards);
-            this.Controls.Add(this.panel8);
-            this.Controls.Add(this.panel7);
-            this.Controls.Add(this.pnlPending);
-            this.Controls.Add(this.pnlContributors);
-            this.Controls.Add(this.pnlActivities);
-            this.Controls.Add(this.pnlChart);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
-            this.Font = new System.Drawing.Font("Franklin Gothic Medium", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.ClientSize = new System.Drawing.Size(924, 537);
             this.Name = "AdminDashboard";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AdminDashboard";
-            this.Load += new System.EventHandler(this.AdminDashboard_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.pnlHelp.ResumeLayout(false);
-            this.pnlHelp.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picBell)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
-            this.pnlPending.ResumeLayout(false);
-            this.pnlPending.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvContributors)).EndInit();
-            this.pnlContributors.ResumeLayout(false);
-            this.pnlContributors.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvActivities)).EndInit();
-            this.pnlActivities.ResumeLayout(false);
-            this.pnlActivities.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
-            this.panel8.ResumeLayout(false);
-            this.panel8.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
-            this.pnlChart.ResumeLayout(false);
-            this.pnlChart.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.tblCards.ResumeLayout(false);
+            this.Load += new System.EventHandler(this.AdminDashboard_Load_1);
             this.ResumeLayout(false);
 
         }
