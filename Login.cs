@@ -1,7 +1,9 @@
-﻿using System;
+﻿using Microsoft.SqlServer.Server;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,6 +14,7 @@ namespace FOT_BFMS
 {
     public partial class Login : Form
     {
+        
         public Login()
         {
             InitializeComponent();
@@ -21,6 +24,10 @@ namespace FOT_BFMS
             pictureBoxEyeOpen.Visible = false;
             makeDull();
             
+        }
+        private void Login_Load(object sender, EventArgs e)         
+        {
+            toolTip1.SetToolTip(pictureBoxClossApp, "Close");
         }
         private void makeDull()
         {
@@ -40,10 +47,7 @@ namespace FOT_BFMS
 
         }
 
-        private void Login_Load(object sender, EventArgs e)
-        {
-            toolTip1.SetToolTip(pictureBoxClossApp, "Close");
-        }
+        
 
         private void roundControl4_Load(object sender, EventArgs e)
         {
@@ -118,7 +122,6 @@ namespace FOT_BFMS
 
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            
             Signup signup = new Signup();
             signup.Show();
             this.Hide();
@@ -155,7 +158,45 @@ namespace FOT_BFMS
 
         private void roundControlLogin_Click(object sender, EventArgs e)
         {
-            
+            string username = textBoxUsername.Text.Trim();
+            string password = textBoxPassword.Text.Trim();
+
+            using (SqlConnection con = SQLConnect.GetConnection())
+            {
+                con.Open();
+
+                string query = "SELECT password FROM Signup WHERE Username = @username";
+
+                SqlCommand cmd = new SqlCommand(query, con);
+                cmd.Parameters.AddWithValue("@username", username);
+
+                object result = cmd.ExecuteScalar();
+
+                // ❌ Username not found
+                if (result == null)
+                {
+                    MessageBox.Show("Username not found");
+                    return;
+                }
+
+                
+                string dbPassword = result.ToString().Trim();
+
+                // ❌ Password incorrect
+                if (dbPassword != password)
+                {
+                    MessageBox.Show("Incorrect password");
+                    return;
+                }
+
+                // ✅ Login success
+                MessageBox.Show("Login successful!");
+
+                AdminDashboard ad = new AdminDashboard();
+                ad.Show();
+                this.Hide();
+            }
+        
         }
         private void loginButonCheck()
         {
