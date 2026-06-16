@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminDashboard));
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
@@ -117,6 +118,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.tblCards = new System.Windows.Forms.TableLayoutPanel();
+            this.label37Test = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlHelp.SuspendLayout();
@@ -421,6 +423,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.label37Test);
             this.panel2.Controls.Add(this.dateTimePicker1);
             this.panel2.Controls.Add(this.picBell);
             this.panel2.Controls.Add(this.label8);
@@ -1213,6 +1216,15 @@
             this.tblCards.Size = new System.Drawing.Size(1108, 150);
             this.tblCards.TabIndex = 12;
             // 
+            // label37Test
+            // 
+            this.label37Test.AutoSize = true;
+            this.label37Test.Location = new System.Drawing.Point(560, 9);
+            this.label37Test.Name = "label37Test";
+            this.label37Test.Size = new System.Drawing.Size(84, 21);
+            this.label37Test.TabIndex = 7;
+            this.label37Test.Text = "Test LAbel";
+            // 
             // AdminDashboard
             // 
             this.ClientSize = new System.Drawing.Size(924, 537);
@@ -1310,5 +1322,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.TableLayoutPanel tblCards;
+        private System.Windows.Forms.Label label37Test;
     }
 }
